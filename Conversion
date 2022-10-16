@@ -1,0 +1,33 @@
+'''TEXT TO SPPECH'''
+              
+import pyttsx3 as pt
+
+text=pt.init()         #input of sentence to convert into speech
+
+t=input("Enter The Text")#say is used to convert into speech
+
+text.setProperty('rate',150)   #speed of the voice that can be more than 100
+
+text.setProperty('volume',0.5)   #volume of the voice alwys between 0-1
+
+voice_id="HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Speech\Voices\Tokens\TTS_MS_EN-US_ZIRA_11.0"
+
+text.setProperty('voice',voice_id)
+
+text.say(t)
+
+
+
+text.runAndWait()         #Exit outs my program
+
+#to find the voices that are being stored in your system
+'''
+voices=text.getProperty('voices')
+for i in voices:
+    print("Voice:")
+    print("ID: %s" %i.id)
+    print("Name: %s" %i.name)
+    print("Age: %s" %i.age)
+    print("Gender: %s" %i.gender)
+    print("Languages Known: %s" %i.languages)
+'''
